@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: meu-pod
+  labels:
+    run: meu-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+    - name: alpine
+      image: alpine
+      args:
+        - sleep
+        - "2000"
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
